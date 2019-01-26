@@ -1,7 +1,7 @@
 # TG-API
+[![Build Status][travis-image]][travis-url]
 > Unofficial TG-Timetable API for Java.
 
-[![Build Status][travis-image]][travis-url]
 
 A Java library to get the current timetable from your DSBMobile account.
 
