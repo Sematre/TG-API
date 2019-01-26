@@ -1,5 +1,8 @@
 language: java
-addons:
-  apt:
-    packages:
-      - oracle-java8-set-default
+jdk:
+  - openjdk8
+  - openjdk11
+  - openjdk-ea
+  - oraclejdk8
+  - oraclejdk11
+  - oraclejdk-ea
