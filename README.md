@@ -1,5 +1,7 @@
 # TG-API
+[![Release Version][release-image]][release-url]
 [![Build Status][travis-image]][travis-url]
+[![License][license-image]][license-url]
 > Unofficial TG-Timetable API for Java.
 
 
@@ -45,5 +47,11 @@ Some options:
 
 Distributed under the **MIT License**. See ``LICENSE`` for more information.
 
-[travis-image]: https://travis-ci.com/Sematre/TG-API.svg?branch=master
+[release-image]: https://img.shields.io/github/release/Sematre/TG-API.svg?style=flat-square
+[release-url]: https://github.com/Sematre/TG-API/releases
+
+[travis-image]: https://img.shields.io/travis/com/Sematre/TG-API.svg?style=flat-square
 [travis-url]: https://travis-ci.com/Sematre/TG-API
+
+[license-image]: https://img.shields.io/github/license/Sematre/TG-API.svg?style=flat-square
+[license-url]: https://github.com/Sematre/TG-API/blob/master/LICENSE
