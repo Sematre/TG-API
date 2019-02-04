@@ -10,6 +10,7 @@ import java.util.Locale;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import de.sematre.dsbmobile.DSBMobile;
@@ -38,9 +39,12 @@ public class TG implements Serializable, Cloneable {
 				String[] dateAndWeek = elements.get(index).text().split(", Woche ");
 				Date date = new SimpleDateFormat("d.M.yyyy EEEE", Locale.GERMAN).parse(dateAndWeek[0]);
 				Week week = Week.getWeek(dateAndWeek[1]);
+				if (week == null) week = Week.OTHER.setLetter(dateAndWeek[1]);
 
 				ArrayList<TableEntry> tableEntries = new ArrayList<>();
-				elements.get(index + 1).select(".list.odd,.list.even").forEach(element -> tableEntries.add(TableEntry.fromElement(element)));
+				for (Element element : elements.get(index + 1).select(".list.odd,.list.even")) {
+					tableEntries.add(TableEntry.fromElement(element));
+				}
 
 				tables.add(new Table(date, week, tableEntries));
 			}

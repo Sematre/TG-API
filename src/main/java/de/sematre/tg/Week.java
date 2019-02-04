@@ -2,7 +2,7 @@ package de.sematre.tg;
 
 public enum Week {
 
-	A("A"), B("B"), C("C"), D("D");
+	A("A"), B("B"), C("C"), D("D"), OTHER("");
 
 	private String letter = null;
 
@@ -12,6 +12,11 @@ public enum Week {
 
 	public String getLetter() {
 		return letter;
+	}
+
+	public Week setLetter(String letter) {
+		this.letter = letter;
+		return this;
 	}
 
 	public static Week getWeek(String letter) {

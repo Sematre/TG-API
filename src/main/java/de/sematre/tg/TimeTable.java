@@ -33,7 +33,9 @@ public class TimeTable implements Serializable, Cloneable {
 
 	public TimeTable summarize() {
 		ArrayList<Table> summarizedList = new ArrayList<>();
-		tables.forEach(table -> summarizedList.add(table.summarize()));
+		for (Table table : tables) {
+			summarizedList.add(table.summarize());
+		}
 
 		tables = summarizedList;
 		return this;
@@ -41,7 +43,9 @@ public class TimeTable implements Serializable, Cloneable {
 
 	public TimeTable split() {
 		ArrayList<Table> splittedList = new ArrayList<>();
-		tables.forEach(table -> splittedList.add(table.split()));
+		for (Table table : tables) {
+			splittedList.add(table.split());
+		}
 
 		tables = splittedList;
 		return this;
@@ -64,6 +68,7 @@ public class TimeTable implements Serializable, Cloneable {
 
 	@Override
 	public String toString() {
-		return "{date=" + date + ", list=" + tables + "}";
+		new Date();
+		return "{\"date\":\"" + date.getTime() + "\", \"list\":" + tables + "}";
 	}
 }

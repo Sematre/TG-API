@@ -98,6 +98,6 @@ public class News implements Serializable, Cloneable {
 
 	@Override
 	public String toString() {
-		return "{headLine=" + headLine + ", date=" + date + ", id=" + id + ", imageUrl=" + imageUrl + ", shortMessage=" + shortMessage + ", wholeMessage=" + wholeMessage + "}";
+		return "{\"headLine\":\"" + headLine + "\", \"date\":\"" + date + "\", \"id\":\"" + id + "\", \"imageUrl\":\"" + imageUrl + "\", \"shortMessage\":\"" + shortMessage + "\", \"wholeMessage\":\"" + wholeMessage + "\"}";
 	}
 }

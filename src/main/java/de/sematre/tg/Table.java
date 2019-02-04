@@ -124,6 +124,6 @@ public class Table implements Serializable, Cloneable {
 
 	@Override
 	public String toString() {
-		return "{date=" + date + ", week=" + week + ", tableEntries=" + tableEntries + "}";
+		return "{\"date\":\"" + date.getTime() + "\", \"week\":\"" + week + "\", \"tableEntries\":" + tableEntries + "}";
 	}
 }

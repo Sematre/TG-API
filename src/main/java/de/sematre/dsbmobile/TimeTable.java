@@ -85,6 +85,6 @@ public class TimeTable implements Serializable, Cloneable {
 
 	@Override
 	public String toString() {
-		return "{isHtml=" + isHtml + ", date=" + date + ", groupName=" + groupName + ", title=" + title + ", url=" + url + "}";
+		return "{\"isHtml\":\"" + isHtml + "\", \"date\":\"" + date + "\", \"groupName\":\"" + groupName + "\", \"title\":\"" + title + "\", \"url\":\"" + url + "\"}";
 	}
 }

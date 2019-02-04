@@ -22,8 +22,8 @@ public class DSBMobile implements Serializable, Cloneable {
 	}
 
 	public DSBMobile(String username, String password) {
-		String json = "[" + getStringFromURL("https://iphone.dsbcontrol.de/(S(bsiggfwxwakskze5ca4fd4ed))/iPhoneService.svc/DSB/authid/" + username + "/" + password) + "]";
-		JsonArray jArray = gson.fromJson(json, JsonArray.class);
+		String json = getStringFromURL("https://iphone.dsbcontrol.de/(S(bsiggfwxwakskze5ca4fd4ed))/iPhoneService.svc/DSB/authid/" + username + "/" + password);
+		JsonArray jArray = gson.fromJson(("[" + json + "]"), JsonArray.class);
 
 		String key = jArray.get(0).getAsString();
 		if (key.equals("00000000-0000-0000-0000-000000000000")) throw new IllegalArgumentException("Username or password is incorrect!");

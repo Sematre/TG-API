@@ -39,8 +39,15 @@ Some options:
  - Another option is the ``.split()`` methode, witch also appand behind ``tg.getTimeTable()``. It splits the TableEntry, if there are more then one classes in the ``schoolClass`` field.
 
 ## Release History
+* 1.1
+    * Java 7 compatibility
+	* ``toString()`` update
 * 1.0
     * Initial version
+
+## Dependencies
+- [Google Gson](https://github.com/google/gson) ([Apache 2 license](https://github.com/google/gson/blob/master/LICENSE)).
+- [Jsoup](https://jsoup.org/) ([MIT License](https://jsoup.org/license)).
 
 ## Info
 © Sematre 2019

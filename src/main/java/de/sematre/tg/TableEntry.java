@@ -167,7 +167,7 @@ public class TableEntry implements Serializable, Cloneable {
 
 	@Override
 	public String toString() {
-		return "{schoolClass=" + schoolClass + ", time=" + time + ", type=" + type + ", replacementSubject=" + replacementSubject + ", subject=" + subject + ", replacementRoom=" + replacementRoom + ", room=" + room + ", text=" + text + "}";
+		return "{\"schoolClass\":\"" + schoolClass + "\", \"time\":\"" + time + "\", \"type\":\"" + type + "\", \"replacementSubject\":\"" + replacementSubject + "\", \"subject\":\"" + subject + "\", \"replacementRoom\":\"" + replacementRoom + "\", \"room\":\"" + room + "\", \"text\":\"" + text + "\"}";
 	}
 
 	public static TableEntry fromElement(Element element) {
