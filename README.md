@@ -39,6 +39,8 @@ Some options:
  - Another option is the ``.split()`` methode, witch also appand behind ``tg.getTimeTable()``. It splits the TableEntry, if there are more then one classes in the ``schoolClass`` field.
 
 ## Release History
+* 1.2
+    * DSBmobile-API update
 * 1.1
     * Java 7 compatibility
 	* ``toString()`` update

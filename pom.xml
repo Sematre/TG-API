@@ -5,7 +5,7 @@
 
 	<groupId>de.sematre.tg</groupId>
 	<artifactId>TG-API</artifactId>
-	<version>1.1</version>
+	<version>1.2</version>
 
 	<name>TG-API</name>
 	<description>A Java library to get the current timetable from your DSBMobile account.</description>

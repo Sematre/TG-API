@@ -24,13 +24,17 @@ public class TG implements Serializable, Cloneable {
 		this.dsbMobile = dsbMobile;
 	}
 
+	public TG(String key) {
+		this(new DSBMobile(key));
+	}
+
 	public TG(String username, String password) {
 		this(new DSBMobile(username, password));
 	}
 
 	public TimeTable getTimeTable() {
 		try {
-			de.sematre.dsbmobile.TimeTable dsbTable = dsbMobile.getTimeTables().get(0);
+			de.sematre.dsbmobile.DSBMobile.TimeTable dsbTable = dsbMobile.getTimeTables().get(0);
 			Document document = Jsoup.connect(dsbTable.getUrl()).get();
 
 			ArrayList<Table> tables = new ArrayList<>();
