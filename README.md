@@ -5,7 +5,7 @@
 > Unofficial TG-Timetable API for Java.
 
 
-A Java library to get the current timetable from your DSBMobile account.
+A Java library to get the current timetable from your DSBmobile account.
 
 ## Code example
 A very simple example to get the timetable.
