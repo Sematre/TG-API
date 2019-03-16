@@ -22,7 +22,13 @@
 		<connection>scm:git:git://github.com/sematre/tg-api.git</connection>
 		<developerConnection>scm:git:ssh://github.com:sematre/tg-api.git</developerConnection>
 		<url>https://github.com/sematre/tg-api</url>
+		<tag>HEAD</tag>
 	</scm>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/Sematre/TG-API/issues</url>
+	</issueManagement>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -59,8 +65,9 @@
 		<profile>
 			<id>release</id>
 			<activation>
+				<activeByDefault>true</activeByDefault>
 				<property>
-					<name>TRAVIS</name>
+					<name>CI</name>
 					<value>false</value>
 				</property>
 			</activation>

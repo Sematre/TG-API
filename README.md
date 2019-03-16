@@ -43,7 +43,7 @@ Some options:
 Gradle:
 ```gradle
 dependencies {
-	implementation 'de.sematre.tg:TG-API:1.2'
+	implementation 'de.sematre.tg:TG-API:1.3'
 }
 ```
 
@@ -52,7 +52,7 @@ Maven:
 <dependency>
 	<groupId>de.sematre.tg</groupId>
 	<artifactId>TG-API</artifactId>
-	<version>1.2</version>
+	<version>1.3</version>
 </dependency>
 ```
 
@@ -77,10 +77,10 @@ Maven:
 Distributed under the **MIT License**. See ``LICENSE`` for more information.
 
 [release-image]: https://img.shields.io/github/release/Sematre/TG-API.svg?style=flat-square
-[release-url]: https://github.com/Sematre/TG-API/releases
+[release-url]: https://github.com/Sematre/TG-API/releases/latest
 
-[maven-image]: https://img.shields.io/maven-metadata/v/http/central.maven.org/maven2/de/sematre/tg/TG-API/maven-metadata.xml.svg?style=flat-square
-[maven-url]: https://github.com/Sematre/TG-API#implementation
+[maven-image]: https://img.shields.io/maven-central/v/de.sematre.tg/TG-API.svg?style=flat-square
+[maven-url]: https://search.maven.org/artifact/de.sematre.tg/TG-API/
 
 [travis-image]: https://img.shields.io/travis/com/Sematre/TG-API.svg?style=flat-square
 [travis-url]: https://travis-ci.com/Sematre/TG-API
