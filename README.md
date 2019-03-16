@@ -1,5 +1,6 @@
 # TG-API
 [![Release Version][release-image]][release-url]
+[![Maven Version][maven-image]][maven-url]
 [![Build Status][travis-image]][travis-url]
 [![License][license-image]][license-url]
 > Unofficial TG-Timetable API for Java.
@@ -38,7 +39,26 @@ Some options:
 ``TimeTable timeTable = tg.getTimeTable().summarize();``
  - Another option is the ``.split()`` methode, witch also appand behind ``tg.getTimeTable()``. It splits the TableEntry, if there are more then one classes in the ``schoolClass`` field.
 
+## Implementation
+Gradle:
+```gradle
+dependencies {
+	implementation 'de.sematre.tg:TG-API:1.2'
+}
+```
+
+Maven:
+```xml
+<dependency>
+	<groupId>de.sematre.tg</groupId>
+	<artifactId>TG-API</artifactId>
+	<version>1.2</version>
+</dependency>
+```
+
 ## Release History
+* 1.3
+	* Maven implementation
 * 1.2
     * DSBmobile-API update
 * 1.1
@@ -58,6 +78,9 @@ Distributed under the **MIT License**. See ``LICENSE`` for more information.
 
 [release-image]: https://img.shields.io/github/release/Sematre/TG-API.svg?style=flat-square
 [release-url]: https://github.com/Sematre/TG-API/releases
+
+[maven-image]: https://img.shields.io/maven-metadata/v/http/central.maven.org/maven2/de/sematre/tg/TG-API/maven-metadata.xml.svg?style=flat-square
+[maven-url]: https://github.com/Sematre/TG-API#implementation
 
 [travis-image]: https://img.shields.io/travis/com/Sematre/TG-API.svg?style=flat-square
 [travis-url]: https://travis-ci.com/Sematre/TG-API
