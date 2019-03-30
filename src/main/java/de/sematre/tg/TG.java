@@ -2,6 +2,7 @@ package de.sematre.tg;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public class TG implements Serializable, Cloneable {
 	public TimeTable getTimeTable() {
 		try {
 			de.sematre.dsbmobile.DSBMobile.TimeTable dsbTable = dsbMobile.getTimeTables().get(0);
-			Document document = Jsoup.connect(dsbTable.getUrl()).get();
+			Document document = Jsoup.parse(new URL(dsbTable.getUrl()).openStream(), "WINDOWS-1252", dsbTable.getUrl());
 
 			ArrayList<Table> tables = new ArrayList<>();
 			Elements elements = document.select(".mon_title,.mon_list");

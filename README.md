@@ -43,7 +43,7 @@ Some options:
 Gradle:
 ```gradle
 dependencies {
-	implementation 'de.sematre.tg:TG-API:1.3'
+	implementation 'de.sematre.tg:TG-API:1.4'
 }
 ```
 
@@ -52,11 +52,14 @@ Maven:
 <dependency>
 	<groupId>de.sematre.tg</groupId>
 	<artifactId>TG-API</artifactId>
-	<version>1.3</version>
+	<version>1.4</version>
 </dependency>
 ```
 
 ## Release History
+* 1.4
+	* Dependencies update
+	* Charset fix
 * 1.3
 	* Maven implementation
 * 1.2
