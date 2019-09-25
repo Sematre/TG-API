@@ -1,6 +1,7 @@
 package de.sematre.tg;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
 import java.text.ParseException;
@@ -8,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -21,6 +23,8 @@ public class TG implements Serializable, Cloneable {
 	private static final long serialVersionUID = -6062100032432580842L;
 	private DSBMobile dsbMobile = null;
 
+	public TG() {}
+
 	public TG(DSBMobile dsbMobile) {
 		this.dsbMobile = dsbMobile;
 	}
@@ -33,10 +37,9 @@ public class TG implements Serializable, Cloneable {
 		this(new DSBMobile(username, password));
 	}
 
-	public TimeTable getTimeTable() {
+	public TimeTable getTimeTable(InputStream inputStream, String charset, String baseUri, Date lastUpdate) {
 		try {
-			de.sematre.dsbmobile.DSBMobile.TimeTable dsbTable = dsbMobile.getTimeTables().get(0);
-			Document document = Jsoup.parse(new URL(dsbTable.getUrl()).openStream(), "WINDOWS-1252", dsbTable.getUrl());
+			Document document = Jsoup.parse(inputStream, charset, baseUri);
 
 			ArrayList<Table> tables = new ArrayList<>();
 			Elements elements = document.select(".mon_title,.mon_list");
@@ -54,12 +57,25 @@ public class TG implements Serializable, Cloneable {
 				tables.add(new Table(date, week, tableEntries));
 			}
 
-			Date date = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.GERMAN).parse(dsbTable.getDate());
-			return new TimeTable(date, tables);
+			return new TimeTable(lastUpdate, tables);
 		} catch (IOException e) {
 			throw new RuntimeException("Probably an Jsoup error", e);
 		} catch (ParseException e) {
-			throw new RuntimeException("Unable to parse the date", e);
+			throw new RuntimeException("Date cannot be parsed", e);
+		}
+	}
+
+	public TimeTable getTimeTable() {
+		Objects.requireNonNull(dsbMobile, "dsbMobile is null!");
+
+		try {
+			de.sematre.dsbmobile.DSBMobile.TimeTable timeTable = dsbMobile.getTimeTables().get(0);
+			Date date = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.GERMAN).parse(timeTable.getDate());
+			return getTimeTable(new URL(timeTable.getUrl()).openStream(), "WINDOWS-1252", timeTable.getUrl(), date);
+		} catch (IOException e) {
+			throw new RuntimeException("URL stream cannot be opened", e);
+		} catch (ParseException e) {
+			throw new RuntimeException("Date cannot be parsed", e);
 		}
 	}
 

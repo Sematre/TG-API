@@ -68,7 +68,6 @@ public class TimeTable implements Serializable, Cloneable {
 
 	@Override
 	public String toString() {
-		new Date();
-		return "{\"date\":\"" + date.getTime() + "\", \"list\":" + tables + "}";
+		return "{\"date\":\"" + date.getTime() + "\", \"list\":" + tables.toString() + "}";
 	}
 }

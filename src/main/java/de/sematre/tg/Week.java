@@ -14,6 +14,10 @@ public enum Week {
 		return letter;
 	}
 
+	public String getSimplifiedLetter() {
+		return (this == Week.A || this == Week.C) ? A.getLetter() : B.getLetter();
+	}
+
 	public Week setLetter(String letter) {
 		this.letter = letter;
 		return this;

@@ -171,7 +171,10 @@ public class TableEntry implements Serializable, Cloneable {
 	}
 
 	public static TableEntry fromElement(Element element) {
-		Elements elements = element.children();
+		return fromElements(element.children());
+	}
+
+	public static TableEntry fromElements(Elements elements) {
 		TableEntry tableEntry = new TableEntry();
 		tableEntry.setSchoolClass(elements.get(0).text());
 		tableEntry.setTime(elements.get(1).text());
