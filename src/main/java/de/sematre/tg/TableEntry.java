@@ -5,7 +5,7 @@ import java.io.Serializable;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class TableEntry implements Serializable, Cloneable {
+public class TableEntry implements Comparable<TableEntry>, Serializable, Cloneable {
 
 	private static final long serialVersionUID = -7299985732840441286L;
 	private String schoolClass = "";
@@ -101,6 +101,11 @@ public class TableEntry implements Serializable, Cloneable {
 	public TableEntry setText(String text) {
 		this.text = text;
 		return this;
+	}
+
+	@Override
+	public int compareTo(TableEntry entry) {
+		return schoolClass.compareToIgnoreCase(entry.schoolClass);
 	}
 
 	@Override

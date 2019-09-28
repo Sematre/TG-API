@@ -2,6 +2,7 @@ package de.sematre.tg;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 import org.jsoup.helper.StringUtil;
@@ -81,6 +82,11 @@ public class Table implements Serializable, Cloneable {
 		}
 
 		tableEntries = summarizedList;
+		return this;
+	}
+
+	public Table sort() {
+		Collections.sort(tableEntries);
 		return this;
 	}
 
