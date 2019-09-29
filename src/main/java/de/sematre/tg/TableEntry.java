@@ -186,14 +186,14 @@ public class TableEntry implements Comparable<TableEntry>, Serializable, Cloneab
 
 	public static TableEntry fromElements(Elements elements) {
 		TableEntry tableEntry = new TableEntry();
-		tableEntry.setSchoolClass(elements.get(0).text());
-		tableEntry.setTime(elements.get(1).text());
-		tableEntry.setType(elements.get(2).text());
-		tableEntry.setSubject(elements.get(3).text());
-		tableEntry.setReplacementSubject(elements.get(4).text());
-		tableEntry.setRoom(elements.get(5).text());
-		tableEntry.setReplacementRoom(elements.get(6).text());
-		tableEntry.setText(elements.get(7).text());
+		tableEntry.setSchoolClass(elements.get(0).text().replaceAll("\\xA0", ""));
+		tableEntry.setTime(elements.get(1).text().replaceAll("\\xA0", ""));
+		tableEntry.setType(elements.get(2).text().replaceAll("\\xA0", ""));
+		tableEntry.setSubject(elements.get(3).text().replaceAll("\\xA0", ""));
+		tableEntry.setReplacementSubject(elements.get(4).text().replaceAll("\\xA0", ""));
+		tableEntry.setRoom(elements.get(5).text().replaceAll("\\xA0", ""));
+		tableEntry.setReplacementRoom(elements.get(6).text().replaceAll("\\xA0", ""));
+		tableEntry.setText(elements.get(7).text().replaceAll("\\xA0", ""));
 
 		return tableEntry;
 	}
