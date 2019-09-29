@@ -171,6 +171,11 @@ public class TableEntry implements Comparable<TableEntry>, Serializable, Cloneab
 	}
 
 	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+
+	@Override
 	public String toString() {
 		return "{\"schoolClass\":\"" + schoolClass + "\", \"time\":\"" + time + "\", \"type\":\"" + type + "\", \"replacementSubject\":\"" + replacementSubject + "\", \"subject\":\"" + subject + "\", \"replacementRoom\":\"" + replacementRoom + "\", \"room\":\"" + room + "\", \"text\":\"" + text + "\"}";
 	}
@@ -191,10 +196,5 @@ public class TableEntry implements Comparable<TableEntry>, Serializable, Cloneab
 		tableEntry.setText(elements.get(7).text());
 
 		return tableEntry;
-	}
-
-	@Override
-	protected Object clone() throws CloneNotSupportedException {
-		return super.clone();
 	}
 }
