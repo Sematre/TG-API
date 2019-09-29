@@ -44,7 +44,7 @@ Some options:
 Gradle:
 ```gradle
 dependencies {
-	implementation 'de.sematre.tg:TG-API:1.5'
+	implementation 'de.sematre.tg:TG-API:1.6'
 }
 ```
 
@@ -53,11 +53,14 @@ Maven:
 <dependency>
 	<groupId>de.sematre.tg</groupId>
 	<artifactId>TG-API</artifactId>
-	<version>1.5</version>
+	<version>1.6</version>
 </dependency>
 ```
 
 ## Release History
+* 1.6
+	* Add ``sort()`` function to TimeTable
+	* Remove non ASCII character 0xA0 from input
 * 1.5
 	* Add ``sort()`` function
 * 1.4
