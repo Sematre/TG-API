@@ -41,6 +41,16 @@ public class TimeTable implements Serializable, Cloneable {
 		return this;
 	}
 
+	public TimeTable sort() {
+		ArrayList<Table> sortedList = new ArrayList<>();
+		for (Table table : tables) {
+			sortedList.add(table.sort());
+		}
+
+		tables = sortedList;
+		return this;
+	}
+
 	public TimeTable split() {
 		ArrayList<Table> splittedList = new ArrayList<>();
 		for (Table table : tables) {
