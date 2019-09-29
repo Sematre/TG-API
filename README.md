@@ -38,6 +38,7 @@ Some options:
  - If you like to summarize the timetable,  you can appand ``.summarize()`` behind ``tg.getTimeTable()``. Would look like this:
 ``TimeTable timeTable = tg.getTimeTable().summarize();``
  - Another option is the ``.split()`` methode, witch also appand behind ``tg.getTimeTable()``. It splits the TableEntry, if there are more then one classes in the ``schoolClass`` field.
+ - The third option is the ``.sort()`` methode. It sorts the time table alphabetic (0-9, A-Z) by the class name.
 
 ## Implementation
 Gradle:
@@ -57,6 +58,8 @@ Maven:
 ```
 
 ## Release History
+* 1.5
+	* Add ``sort()`` function
 * 1.4
 	* Dependencies update
 	* Charset fix
