@@ -29,10 +29,6 @@ public class TG implements Serializable, Cloneable {
 		this.dsbMobile = dsbMobile;
 	}
 
-	public TG(String key) {
-		this(new DSBMobile(key));
-	}
-
 	public TG(String username, String password) {
 		this(new DSBMobile(username, password));
 	}
