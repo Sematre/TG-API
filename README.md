@@ -44,7 +44,7 @@ Some options:
 Gradle:
 ```gradle
 dependencies {
-	implementation 'de.sematre.tg:TG-API:1.7'
+	implementation 'de.sematre.tg:TG-API:1.8'
 }
 ```
 
@@ -53,12 +53,12 @@ Maven:
 <dependency>
 	<groupId>de.sematre.tg</groupId>
 	<artifactId>TG-API</artifactId>
-	<version>1.7</version>
+	<version>1.8</version>
 </dependency>
 ```
 
 ## Release History
-* 1.7
+* 1.7 / 1.8
 	* DSBmobile-API update
 * 1.6
 	* Add ``sort()`` function to TimeTable
