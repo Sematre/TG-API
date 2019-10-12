@@ -59,7 +59,7 @@ Maven:
 
 ## Release History
 * 1.7
-	* Update TG-API
+	* DSBmobile-API update
 * 1.6
 	* Add ``sort()`` function to TimeTable
 	* Remove non ASCII character 0xA0 from input
