@@ -58,7 +58,7 @@ Maven:
 ```
 
 ## Release History
-* 1.7 / 1.8 / 1.9
+* 1.7 / 1.8 / 1.9 / 1.10
 	* DSBmobile-API update
 * 1.6
 	* Add ``sort()`` function to TimeTable
