@@ -67,7 +67,7 @@ public class TG implements Serializable, Cloneable {
 		try {
 			de.sematre.dsbmobile.DSBMobile.TimeTable timeTable = dsbMobile.getTimeTables().get(0);
 			Date date = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.GERMAN).parse(timeTable.getDate());
-			return getTimeTable(new URL(timeTable.getUrl()).openStream(), "WINDOWS-1252", timeTable.getUrl(), date);
+			return getTimeTable(new URL(timeTable.getDetail()).openStream(), "WINDOWS-1252", timeTable.getDetail(), date);
 		} catch (IOException e) {
 			throw new RuntimeException("URL stream cannot be opened", e);
 		} catch (ParseException e) {
