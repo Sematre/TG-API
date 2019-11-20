@@ -60,7 +60,7 @@ for (News news : newsList) {
 Gradle:
 ```gradle
 dependencies {
-	implementation 'de.sematre.tg:TG-API:1.11'
+	implementation 'de.sematre.tg:TG-API:1.12'
 }
 ```
 
@@ -69,11 +69,13 @@ Maven:
 <dependency>
 	<groupId>de.sematre.tg</groupId>
 	<artifactId>TG-API</artifactId>
-	<version>1.11</version>
+	<version>1.12</version>
 </dependency>
 ```
 
 ## Release History
+* 1.12
+	* News implementation
 * 1.7 / 1.8 / 1.9 / 1.10 / 1.11
 	* DSBmobile-API update
 * 1.6
