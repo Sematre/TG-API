@@ -40,6 +40,22 @@ Some options:
  - Another option is the ``.split()`` methode, witch also appand behind ``tg.getTimeTable()``. It splits the TableEntry, if there are more then one classes in the ``schoolClass`` field.
  - The third option is the ``.sort()`` methode. It sorts the time table alphabetic (0-9, A-Z) by the class name.
 
+News:
+```java
+TG tg = new TG("username", "password");
+ArrayList<News> newsList = tg.getNews();
+
+for (News news : newsList) {
+
+	UUID uuid = news.getUUID();
+	Date date = news.getDate();
+
+	String title = news.getTitle();
+	String text = news.getText();
+
+}
+```
+
 ## Implementation
 Gradle:
 ```gradle

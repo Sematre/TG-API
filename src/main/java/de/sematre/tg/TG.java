@@ -21,6 +21,8 @@ import de.sematre.dsbmobile.DSBMobile;
 public class TG implements Serializable, Cloneable {
 
 	private static final long serialVersionUID = -6062100032432580842L;
+	private static final SimpleDateFormat DSB_DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.GERMAN);
+
 	private DSBMobile dsbMobile = null;
 
 	public TG() {}
@@ -66,10 +68,23 @@ public class TG implements Serializable, Cloneable {
 
 		try {
 			de.sematre.dsbmobile.DSBMobile.TimeTable timeTable = dsbMobile.getTimeTables().get(0);
-			Date date = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.GERMAN).parse(timeTable.getDate());
+			Date date = DSB_DATE_FORMAT.parse(timeTable.getDate());
 			return getTimeTable(new URL(timeTable.getDetail()).openStream(), "WINDOWS-1252", timeTable.getDetail(), date);
 		} catch (IOException e) {
 			throw new RuntimeException("URL stream cannot be opened", e);
+		} catch (ParseException e) {
+			throw new RuntimeException("Date cannot be parsed", e);
+		}
+	}
+
+	public ArrayList<News> getNews() {
+		try {
+			ArrayList<News> news = new ArrayList<News>();
+			for (DSBMobile.News newsEntry : dsbMobile.getNews()) {
+				news.add(new News(newsEntry.getUUID(), DSB_DATE_FORMAT.parse(newsEntry.getDate()), newsEntry.getTitle(), newsEntry.getDetail()));
+			}
+
+			return news;
 		} catch (ParseException e) {
 			throw new RuntimeException("Date cannot be parsed", e);
 		}
